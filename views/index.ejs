@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ChatGPT Clone</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="chat-container">
+    <header>ChatGPT Clone</header>
+    <div class="chat-box">
+      <% messages.forEach(msg => { %>
+        <div class="message <%= msg.role === 'user' ? 'user' : 'assistant' %>">
+          <strong><%= msg.role === 'user' ? 'You' : 'ChatGPT' %>:</strong>
+          <p><%= msg.content %></p>
+        </div>
+      <% }) %>
+    </div>
+    <form method="POST" action="/chat" enctype="multipart/form-data">
+      <input type="text" name="message" placeholder="Type your message..." required />
+      <input type="file" name="file" accept=".txt,.pdf,.docx" />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</body>
+</html>
