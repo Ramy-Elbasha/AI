@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bubble Sort with Gemini</title>
+</head>
+<body>
+  <h1>Bubble Sort with Gemini</h1>
+  <form action="/chat" method="post">
+    <input type="text" name="message" placeholder="Enter numbers, e.g., 5,3,2,1" required>
+    <button type="submit">Sort</button>
+  </form>
+
+  <h2>Messages:</h2>
+  <% messages.forEach(msg => { %>
+    <div><strong><%= msg.role %>:</strong> <%= msg.content %></div>
+  <% }) %>
+</body>
+</html>
